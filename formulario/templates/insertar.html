@@ -78,7 +78,9 @@
                 <td>
                     <!--url es una etiqueta de plantilla de django para vistasforlloop.counter0 para el indice del elemnto iniciando desde 0 -->
                     <a href="{% url 'editar' forloop.counter0 %}" class="btn btn-warning">Editar</a>
-                    <a class="btn btn-danger">Eliminar</a>
+                    <a href="{% url 'eliminar' forloop.counter0 %}" class="btn btn-danger btn-sm">Eliminar</a>
+
+                    
                 </td>
             </tr>
             {% endfor%}
@@ -115,9 +117,6 @@
                     <p><strong>Mensaje:</strong> {{ mensaje }}</p>
                 </div>
             {% endif %} -->
-
-        <!-- Enlace a Otra Ruta -->
-        <a href="eliminar" class="btn btn-link mt-4">Ir a eliminar</a>
         </div>
 
         <!-- Bootstrap JS and Popper.js -->

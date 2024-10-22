@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from formulario.views import insertar
 from formulario.views import editar
+from formulario.views import eliminar
 
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path("", insertar, name=""),
     path('editar/<int:index>/', editar, name="editar"),
+    path('eliminar/<int:index>/', eliminar, name="eliminar"),
 ]

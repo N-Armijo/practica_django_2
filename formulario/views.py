@@ -60,4 +60,9 @@ def editar(request, index):
         return redirect('')
     return render(request, 'editar.html', {'contact':contact, 'index':index})
 
-    
+##Eliminar
+def eliminar(request, index):
+    if request.method == 'POST':
+        contacts.pop(index)
+        return redirect('')
+    return render(request, 'eliminar.html', {'contact': contacts[index], 'index': index})
