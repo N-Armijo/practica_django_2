@@ -63,6 +63,6 @@ def editar(request, index):
 ##Eliminar
 def eliminar(request, index):
     if request.method == 'POST':
-        contacts.pop(index)
-        return redirect('')
-    return render(request, 'eliminar.html', {'contact': contacts[index], 'index': index})
+        contacts.pop(index) # elimina
+        return redirect('') #redirige
+    return render(request, 'eliminar.html', {'contact': contacts[index], 'index': index}) #envia a la vista y confirma
