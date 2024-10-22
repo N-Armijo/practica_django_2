@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <form method="post" class="form-control">
+        {% csrf_token %}
+
+            <!-- Campo de Nombre -->
+            <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                required
+            />
+            </div>
+
+            <!-- Campo de Correo -->
+            <div class="mb-3">
+            <label for="correo" class="form-label">Correo:</label>
+            <input
+                type="email"
+                class="form-control"
+                id="correo"
+                name="correo"
+                required
+            />
+            </div>
+
+            <!-- Campo de Mensaje -->
+            <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje:</label>
+            <textarea
+                class="form-control"
+                id="mensaje"
+                name="mensaje"
+                rows="4"
+                required
+            ></textarea>
+            </div>
+
+            <!-- Botón de Enviar -->
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</body>
+</html>

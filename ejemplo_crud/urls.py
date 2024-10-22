@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from formulario.views import insertar
+from formulario.views import editar
 
 urlpatterns = [
     #path("admin/", admin.site.urls),
     path("", insertar, name=""),
+    path('editar/<int:index>/', editar, name="editar"),
 ]

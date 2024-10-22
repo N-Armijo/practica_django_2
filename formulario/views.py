@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 #Importamos para validar correo 
 from django.core.validators import EmailValidator
 from django.core.exceptions import ValidationError
@@ -46,3 +46,18 @@ def insertar(request):
         'contacts': contacts,
         'errors': errors #retornamos los errores
     })
+
+##Editar
+def editar(request, index):
+    contact = contacts[index]
+    if request.method == 'POST':
+        contacts[index]= {
+            'nombre': request.POST.get('nombre',contact['nombre']),
+            'correo': request.POST.get('correo',contact['correo']),
+            'mensaje': request.POST.get('mensaje',contact['mensaje']),
+        }
+        #redirige a la url "" que es la inicial
+        return redirect('')
+    return render(request, 'editar.html', {'contact':contact, 'index':index})
+
+    

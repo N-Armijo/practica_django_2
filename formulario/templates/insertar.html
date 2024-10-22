@@ -76,8 +76,9 @@
                 <td>{{contacto.correo}}</td>
                 <td>{{contacto.mensaje}}</td>
                 <td>
-                    <button class="btn btn-warning">Editar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <!--url es una etiqueta de plantilla de django para vistasforlloop.counter0 para el indice del elemnto iniciando desde 0 -->
+                    <a href="{% url 'editar' forloop.counter0 %}" class="btn btn-warning">Editar</a>
+                    <a class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
             {% endfor%}
